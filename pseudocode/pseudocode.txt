@@ -1,10 +1,13 @@
 Display the title and a description of the program at the top of the page
-Display the current day underneath the description, in the format Day, Month, Date
+Display the current day underneath the description, in the format Day, Month, Date using the Day.js library
 
-Present time blocks for every hour between 9 AM and 5 PM
-Display a grey colour for hours that have already passed during the day
-Display a red colour for the current hour of the day
-Display a green colour for hours in the day which have not yet passed
+For every hour between 9 AM and 5 PM, create a time block
+For every hour in the day which the current hour is past, display the time block as grey
+Display the current hour time block as red
+For every hour in the day which the current hour is behind, display the time block as green
 
 If the user clicks on a time block, allow the user to enter text
-If the user clicks the save button, add the text in that box to the local storage, so that the text will remain even if the user refreshes the page
+If the user has changed text but has not yet clicked the save button, change the image of the save button
+If the save button is clicked, save the text inside that text box to the local storage
+
+If the page is refreshed, display all of the text in the local storage in the correct box on the screen
