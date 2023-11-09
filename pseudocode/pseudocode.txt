@@ -1,0 +1,10 @@
+Display the title and a description of the program at the top of the page
+Display the current day underneath the description, in the format Day, Month, Date
+
+Present time blocks for every hour between 9 AM and 5 PM
+Display a grey colour for hours that have already passed during the day
+Display a red colour for the current hour of the day
+Display a green colour for hours in the day which have not yet passed
+
+If the user clicks on a time block, allow the user to enter text
+If the user clicks the save button, add the text in that box to the local storage, so that the text will remain even if the user refreshes the page
