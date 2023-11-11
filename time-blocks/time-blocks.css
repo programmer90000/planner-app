@@ -26,6 +26,7 @@
 textarea {
     width: 100%;
     height: 100%;
+    font-weight: 900;
 }
 
 .save {
@@ -35,16 +36,4 @@ textarea {
 
 img {
     height: 100%;
-}
-
-.done {
-    background-color: #cccccc;
-}
-
-.current {
-    background-color: #f14d57;
-}
-
-.future {
-    background-color: #74e96e;
 }
