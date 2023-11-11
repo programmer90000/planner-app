@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="time-blocks.css">
+</head>
+<body>
+    <div class="time-block">
+        <div class="time"><h1>9AM</h1></div>
+        <div class="write"><textarea type="text" class="done text"></textarea></div>
+        <div class="save"><img src="img.png"></div>
+    </div>
+    <div class="time-block">
+        <div class="time"><h1>10AM</h1></div>
+        <div class="write"><textarea type="text" class="done text"></textarea></div>
+        <div class="save"><img src="img.png"></div>
+    </div>
+    <div class="time-block">
+        <div class="time"><h1>11AM</h1></div>
+        <div class="write"><textarea type="text" class="done text"></textarea></div>
+        <div class="save"><img src="img.png"></div>
+    </div>
+    <div class="time-block">
+        <div class="time"><h1>12PM</h1></div>
+        <div class="write"><textarea type="text" class="done text"></textarea></div>
+        <div class="save"><img src="img.png"></div>
+    </div>
+    <div class="time-block">
+        <div class="time"><h1>1PM</h1></div>
+        <div class="write"><textarea type="text" class="current text"></textarea></div>
+        <div class="save"><img src="img.png"></div>
+    </div>
+    <div class="time-block">
+        <div class="time"><h1>2PM</h1></div>
+        <div class="write"><textarea type="text" class="future text"></textarea></div>
+        <div class="save"><img src="img.png"></div>
+    </div>
+    <div class="time-block">
+        <div class="time"><h1>3PM</h1></div>
+        <div class="write"><textarea type="text" class="future text"></textarea></div>
+        <div class="save"><img src="img.png"></div>
+    </div>
+    <div class="time-block">
+        <div class="time"><h1>4AM</h1></div>
+        <div class="write"><textarea type="text" class="future text"></textarea></div>
+        <div class="save"><img src="img.png"></div>
+    </div>
+    <div class="time-block">
+        <div class="time"><h1>5PM</h1></div>
+        <div class="write"><textarea type="text" class="future text"></textarea></div>
+        <div class="save"><img src="img.png"></div>
+    </div>
+
+    <button id="getData">Get data</button>
+
+    <script>
+        let saveBtn = document.getElementsByClassName("save");
+        let write = document.getElementsByClassName("text");
+
+        window.onload = getData();
+
+        for (let i = 0; i < saveBtn.length; i++) {
+            saveBtn[i].addEventListener('click', function () {
+                text = write[i].value;
+                localStorage.setItem("Value" + i, text);
+                }
+            )
+        };
+
+        function getData() {
+            for (let i = 0; i < saveBtn.length; i++) {
+                let data = localStorage.getItem("Value" + i);
+                if (data) {
+                    write[i].value = data;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
