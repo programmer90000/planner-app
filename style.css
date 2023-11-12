@@ -37,6 +37,9 @@ header {
 .time-block .time {
     width: 10%;
     border-top: 1px dashed #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .time-block .write {
