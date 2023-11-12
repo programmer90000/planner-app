@@ -1,47 +1,71 @@
 function getCurrentDate() {
     day = dayjs().day(); // Gets current day
-    if (day === 0) {
-        day = "Sunday"
-    } else if (day === 1) {
-        day = "Monday"
-    } else if (day === 2) {
-        day = "Tuesday"
-    } else if (day === 3) {
-        day = "Wednesday"
-    } else if (day === 4) {
-        day = "Thursday"
-    } else if (day === 5) {
-        day = "Friday"
-    } else if (day === 6) {
-        day = "Saturday"
+
+    switch (day) {
+        case 0:
+            day = "Sunday";
+            break;
+        case 1:
+            day = "Monday";
+            break;
+        case 2:
+            day = "Tuesday";
+            break;
+        case 3:
+            day = "Wednesday";
+            break;
+        case 4:
+            day = "Thursday";
+            break;
+        case 5:
+            day = "Friday";
+            break;
+        case 6:
+            day = "Saturday";
+            break;
+        default:
+            day = "Error";
     }
 
     month = dayjs().month() // Gets current month
-    if (month === 0) {
-        month = "January";
-    } else if (month === 1) {
-        month = "Febuary";
-    } else if (month === 2) {
-        month = "March";
-    } else if (month === 3) {
-        month = "April";
-    } else if (month === 4) {
-        month = "May";
-    } else if (month === 5) {
-        month = "June";
-    } else if (month === 6) {
-        month = "July";
-    } else if (month === 7) {
-        month = "August";
-    } else if (month === 8) {
-        month = "September";
-    } else if (month === 9) {
-        month = "October";
-    } else if (month === 10) {
-        month = "November";
-    } else if (month === 11) {
-        month = "December";
-    };
+    switch (month) {
+        case 0:
+            month = "January";
+            break;
+        case 1:
+            month = "Febuary";
+            break;
+        case 2:
+            month = "March";
+            break;
+        case 3:
+            month = "April";
+            break;
+        case 4:
+            month = "May";
+            break;
+        case 5:
+            month = "June";
+            break;
+        case 6:
+            month = "July";
+            break;
+        case 7:
+            month = "August";
+            break;
+        case 8:
+            month = "September";
+            break;
+        case 9:
+            month = "October";
+            break;
+        case 10:
+            month = "November";
+            break;
+        case 11:
+            month = "December";
+            break;
+    }
 
     date = dayjs().date() // Gets current date of current month
 
