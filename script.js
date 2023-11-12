@@ -92,3 +92,16 @@ function createTimeBlocks() {
 
 getCurrentDate();
 createTimeBlocks();
+
+
+/* Display text when the save button is pressed */
+let saveBtn = document.getElementsByClassName("save");
+for (let i = 0; i < saveBtn.length; i++) {
+    saveBtn[i].addEventListener('click', function () {
+        let header = document.getElementsByClassName('container')[0];
+        let h1Tag = document.createElement("p");
+        h1Tag.innerText = "Appointment added to Local Storage✅";
+        h1Tag.style.textAlign = "center";
+        header.prepend(h1Tag);
+    })
+};
