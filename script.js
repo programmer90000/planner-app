@@ -46,12 +46,12 @@ function getCurrentDate() {
     date = dayjs().date() // Gets current date of current month
 
     let currentDate = `${day}, ${month} ${date}th`
-    document.getElementById("currentDay").textContent = currentDate;
+    $("#currentDay").text(currentDate);
 }
 
 function createTimeBlocks() {
-    let saveBtn = document.getElementsByClassName("save");
-    let write = document.getElementsByClassName("text");
+    let saveBtn = $(".save");
+    let write = $(".text");
 
     function getData() {
         for (let i = 0; i < saveBtn.length; i++) {
@@ -95,10 +95,10 @@ createTimeBlocks();
 
 
 /* Display text when the save button is pressed */
-let saveBtn = document.getElementsByClassName("save");
+let saveBtn = $(".save");
 for (let i = 0; i < saveBtn.length; i++) {
     saveBtn[i].addEventListener('click', function () {
-        let header = document.getElementsByClassName('container')[0];
+        let header = $(".container:first").get(0);
         let h1Tag = document.createElement("p");
         h1Tag.innerText = "Appointment added to";
         h1Tag.insertAdjacentHTML('beforeend', `<span style="color: red"> localstorage</span>✅`);
