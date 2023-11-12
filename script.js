@@ -100,7 +100,8 @@ for (let i = 0; i < saveBtn.length; i++) {
     saveBtn[i].addEventListener('click', function () {
         let header = document.getElementsByClassName('container')[0];
         let h1Tag = document.createElement("p");
-        h1Tag.innerText = "Appointment added to Local Storage✅";
+        h1Tag.innerText = "Appointment added to";
+        h1Tag.insertAdjacentHTML('beforeend', `<span style="color: red"> localstorage</span>✅`);
         h1Tag.style.textAlign = "center";
         header.prepend(h1Tag);
     })
