@@ -48,4 +48,47 @@ function getCurrentDate() {
     let currentDate = `${day}, ${month} ${date}th`
     document.getElementById("currentDay").textContent = currentDate;
 }
+
+function createTimeBlocks() {
+    let saveBtn = document.getElementsByClassName("save");
+    let write = document.getElementsByClassName("text");
+
+    function getData() {
+        for (let i = 0; i < saveBtn.length; i++) {
+            let data = localStorage.getItem("Value" + i);
+            if (data) {
+                write[i].value = data;
+            }
+        }
+    }
+
+    // When the page loads, display any information currently in the loacal storage
+    window.onload = getData();
+
+    // When the user clicks the save button, save the date to the local storage
+    for (let i = 0; i < saveBtn.length; i++) {
+        saveBtn[i].addEventListener('click', function () {
+            text = write[i].value;
+            localStorage.setItem("Value" + i, text);
+            }
+        )
+    };
+
+    let currentHour = dayjs().hour();
+
+    let textBlocks = document.querySelectorAll(".time-block .write .text");
+
+    // Change the colour the text boxes depending on the time
+    for (let i = 9; i <= 17; i++) {
+        if (i < currentHour) {
+            textBlocks[i-9].style.backgroundColor = "#CCCCCC";
+        } else if (i === currentHour) {
+            textBlocks[i-9].style.backgroundColor = "#F14D57";
+        } else if (i > currentHour) {
+            textBlocks[i-9].style.backgroundColor = "#75E86F";
+        };
+    };
+};
+
 getCurrentDate();
+createTimeBlocks();
