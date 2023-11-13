@@ -118,15 +118,23 @@ getCurrentDate();
 createTimeBlocks();
 
 
-/* Display text when the save button is pressed */
+//Display text when the save button is pressed
 let saveBtn = $(".save");
 for (let i = 0; i < saveBtn.length; i++) {
     saveBtn[i].addEventListener('click', function () {
         let header = $(".container:first").get(0);
+        let h1 = header.querySelector("p");
+        if (h1) {
+            h1.remove();
+        }
         let h1Tag = document.createElement("p");
         h1Tag.innerText = "Appointment added to";
         h1Tag.insertAdjacentHTML('beforeend', `<span style="color: red"> localstorage</span>✅`);
         h1Tag.style.textAlign = "center";
         header.prepend(h1Tag);
+
+        setTimeout(() => {
+            h1Tag.style.display = "none";
+        }, 3000);
     })
 };
